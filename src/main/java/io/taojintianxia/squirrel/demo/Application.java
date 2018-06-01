@@ -3,7 +3,6 @@ package main.java.io.taojintianxia.squirrel.demo;
 import main.java.io.taojintianxia.squirrel.demo.bo.RuleSetUpdateStatusInBO;
 import main.java.io.taojintianxia.squirrel.demo.event.RuleSetEventEnum;
 import main.java.io.taojintianxia.squirrel.demo.statemachine.factory.RuleSetStateMachineFactory;
-import main.java.io.taojintianxia.squirrel.demo.status.RuleSetStatusEnum;
 import org.squirrelframework.foundation.fsm.UntypedStateMachine;
 
 /**
@@ -18,10 +17,12 @@ public class Application {
                 StateMachineRequestContext<>();
         RuleSetUpdateStatusInBO ruleSetUpdateStatusInBO = new RuleSetUpdateStatusInBO();
         ruleSetUpdateStatusInBO.setId("aaaaa");
-        ruleSetUpdateStatusInBO.setStatus(RuleSetStatusEnum.PENDING_EVALUATION.getCode());
+        ruleSetUpdateStatusInBO.setStatus("20");
         setUpdateStatusInBOStateMachineRequestContext.setData(ruleSetUpdateStatusInBO);
 
-        ruleSetMachine.fire(RuleSetEventEnum.PENDING, setUpdateStatusInBOStateMachineRequestContext);
+        Object object = ruleSetMachine.test(RuleSetEventEnum.EVALUATE, setUpdateStatusInBOStateMachineRequestContext);
+        System.out.println(object);
+
     }
 
 }

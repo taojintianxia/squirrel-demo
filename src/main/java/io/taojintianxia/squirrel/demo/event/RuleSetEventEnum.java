@@ -10,9 +10,9 @@ import lombok.Getter;
 @Getter
 public enum RuleSetEventEnum {
 
-    PENDING,
-    EVALUATION_SUCCESS,
-    EVALUATION_FAILED,
+    EVALUATE,
+    PASS_EVALUATE,
+    REJECT_EVALUATE,
     DEPLOYED,
     LUNCHED,
     STOPPED

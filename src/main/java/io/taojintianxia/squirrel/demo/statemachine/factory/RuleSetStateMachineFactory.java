@@ -16,9 +16,14 @@ public class RuleSetStateMachineFactory {
     public static UntypedStateMachine getRuleSetStateMachine() {
         UntypedStateMachineBuilder builder = StateMachineBuilderFactory.create(RuleSetStateMachine.class);
         builder.externalTransition().from(RuleSetStatusEnum.NEW.getCode()).to(RuleSetStatusEnum.PENDING_EVALUATION.getCode())
-                .on(RuleSetEventEnum.PENDING).callMethod("updateStatus");
+                .on(RuleSetEventEnum.EVALUATE).callMethod("updateStatus");
 
         return builder.newStateMachine(RuleSetStatusEnum.NEW.getCode());
+    }
+
+    public static UntypedStateMachine getRuleSetStateMachineByStatus(String code) {
+        UntypedStateMachineBuilder builder = StateMachineBuilderFactory.create(RuleSetStateMachine.class);
+        return builder.newStateMachine(code);
     }
 
 }
