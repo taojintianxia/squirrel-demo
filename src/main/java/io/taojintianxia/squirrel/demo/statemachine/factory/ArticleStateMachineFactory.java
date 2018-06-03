@@ -1,7 +1,7 @@
 package io.taojintianxia.squirrel.demo.statemachine.factory;
 
 import io.taojintianxia.squirrel.demo.enums.event.ArticleEventEnum;
-import io.taojintianxia.squirrel.demo.enums.status.RuleSetStatusEnum;
+import io.taojintianxia.squirrel.demo.enums.status.ArticleStatusEnum;
 import io.taojintianxia.squirrel.demo.statemachine.ArticleStateMachine;
 import org.squirrelframework.foundation.fsm.StateMachineBuilderFactory;
 import org.squirrelframework.foundation.fsm.UntypedStateMachine;
@@ -15,10 +15,10 @@ public class ArticleStateMachineFactory {
 
     public static UntypedStateMachine getRuleSetStateMachine() {
         UntypedStateMachineBuilder builder = StateMachineBuilderFactory.create(ArticleStateMachine.class);
-        builder.externalTransition().from(RuleSetStatusEnum.NEW.getStatus()).to(RuleSetStatusEnum.PENDING_EVALUATION.getStatus())
+        builder.externalTransition().from(ArticleStatusEnum.NEW.getStatus()).to(ArticleStatusEnum.PENDING_EVALUATION.getStatus())
                 .on(ArticleEventEnum.EVALUATE).callMethod("updateStatus");
 
-        return builder.newStateMachine(RuleSetStatusEnum.NEW.getStatus());
+        return builder.newStateMachine(ArticleStatusEnum.NEW.getStatus());
     }
 
     public static UntypedStateMachine getRuleSetStateMachineByStatus(String name) {

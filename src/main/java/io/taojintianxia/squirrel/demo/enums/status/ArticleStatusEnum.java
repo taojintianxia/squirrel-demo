@@ -8,7 +8,7 @@ import lombok.Getter;
  * @date 2018/5/31 12:00
  */
 @Getter
-public enum RuleSetStatusEnum {
+public enum ArticleStatusEnum {
 
     NEW("新建", "1"),
     PENDING_EVALUATION("待评估", "2"),
@@ -19,7 +19,7 @@ public enum RuleSetStatusEnum {
 
     private String status;
 
-    RuleSetStatusEnum(String name, String status) {
+    ArticleStatusEnum(String name, String status) {
         this.name = name;
         this.status = status;
     }
@@ -29,25 +29,25 @@ public enum RuleSetStatusEnum {
             return null;
         }
 
-        RuleSetStatusEnum[] ruleSetStatusEnums = RuleSetStatusEnum.values();
-        for (RuleSetStatusEnum ruleSetStatusEnum : ruleSetStatusEnums) {
-            if (ruleSetStatusEnum.getStatus().equals(status)) {
-                return ruleSetStatusEnum.getName();
+        ArticleStatusEnum[] articleStatusEnums = ArticleStatusEnum.values();
+        for (ArticleStatusEnum articleStatusEnum : articleStatusEnums) {
+            if (articleStatusEnum.getStatus().equals(status)) {
+                return articleStatusEnum.getName();
             }
         }
 
         return null;
     }
 
-    public static RuleSetStatusEnum getByStatus(String status) {
+    public static ArticleStatusEnum getByStatus(String status) {
         if (Strings.isNullOrEmpty(status)) {
             return null;
         }
 
-        RuleSetStatusEnum[] ruleSetStatusEnums = RuleSetStatusEnum.values();
-        for (RuleSetStatusEnum ruleSetStatusEnum : ruleSetStatusEnums) {
-            if (status.equals(ruleSetStatusEnum.getStatus())) {
-                return ruleSetStatusEnum;
+        ArticleStatusEnum[] articleStatusEnums = ArticleStatusEnum.values();
+        for (ArticleStatusEnum articleStatusEnum : articleStatusEnums) {
+            if (status.equals(articleStatusEnum.getStatus())) {
+                return articleStatusEnum;
             }
         }
 
