@@ -1,4 +1,4 @@
-package main.java.io.taojintianxia.squirrel.demo.bo;
+package main.java.io.taojintianxia.squirrel.demo.bo.in;
 
 import lombok.Data;
 
@@ -7,7 +7,7 @@ import lombok.Data;
  * @date 2018/5/31 14:08
  */
 @Data
-public class RuleSetUpdateStatusInBO {
+public class RuleStatusUpdatingBO {
 
     private String status;
 
