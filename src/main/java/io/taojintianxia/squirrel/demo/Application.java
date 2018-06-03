@@ -1,8 +1,8 @@
-package main.java.io.taojintianxia.squirrel.demo;
+package io.taojintianxia.squirrel.demo;
 
-import main.java.io.taojintianxia.squirrel.demo.enums.event.ArticleEventEnum;
-import main.java.io.taojintianxia.squirrel.demo.statemachine.factory.RuleSetStateMachineFactory;
-import main.java.io.taojintianxia.squirrel.demo.status.RuleSetStatusEnum;
+import io.taojintianxia.squirrel.demo.enums.event.ArticleEventEnum;
+import io.taojintianxia.squirrel.demo.enums.status.RuleSetStatusEnum;
+import io.taojintianxia.squirrel.demo.statemachine.factory.ArticleStateMachineFactory;
 import org.squirrelframework.foundation.fsm.StateMachine;
 
 /**
@@ -12,7 +12,7 @@ import org.squirrelframework.foundation.fsm.StateMachine;
 public class Application {
 
     public static void main(String... args) {
-        StateMachine ruleSetMachine = RuleSetStateMachineFactory.getRuleSetStateMachineByStatus
+        StateMachine ruleSetMachine = ArticleStateMachineFactory.getRuleSetStateMachineByStatus
                 (RuleSetStatusEnum.NEW.name());
 
         Object object = ruleSetMachine.test(ArticleEventEnum.EVALUATE, "ID");

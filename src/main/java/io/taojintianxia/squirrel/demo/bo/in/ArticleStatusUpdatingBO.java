@@ -1,4 +1,4 @@
-package main.java.io.taojintianxia.squirrel.demo.bo.in;
+package io.taojintianxia.squirrel.demo.bo.in;
 
 import lombok.Data;
 

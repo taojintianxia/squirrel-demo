@@ -1,13 +1,13 @@
-package main.java.io.taojintianxia.squirrel.demo.service.impl;
+package io.taojintianxia.squirrel.demo.service.impl;
 
-import main.java.io.taojintianxia.squirrel.demo.service.RuleSetService;
-import main.java.io.taojintianxia.squirrel.demo.status.RuleSetStatusEnum;
+import io.taojintianxia.squirrel.demo.enums.status.RuleSetStatusEnum;
+import io.taojintianxia.squirrel.demo.service.ArticleSetService;
 
 /**
  * @author Nianjun Sun
  * @date 2018/5/31 11:59
  */
-public class RuleSetServiceImpl implements RuleSetService {
+public class ArticleSetServiceImpl implements ArticleSetService {
     @Override
     public int save(String id) {
         System.out.println("当前Id为 : " + id);

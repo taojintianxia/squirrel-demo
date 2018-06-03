@@ -1,9 +1,9 @@
-package main.java.io.taojintianxia.squirrel.demo.statemachine;
+package io.taojintianxia.squirrel.demo.statemachine;
 
-import main.java.io.taojintianxia.squirrel.demo.StateMachineRequestContext;
-import main.java.io.taojintianxia.squirrel.demo.enums.event.ArticleEventEnum;
-import main.java.io.taojintianxia.squirrel.demo.service.RuleSetService;
-import main.java.io.taojintianxia.squirrel.demo.service.impl.RuleSetServiceImpl;
+import io.taojintianxia.squirrel.demo.context.FsmContext;
+import io.taojintianxia.squirrel.demo.enums.event.ArticleEventEnum;
+import io.taojintianxia.squirrel.demo.service.ArticleSetService;
+import io.taojintianxia.squirrel.demo.service.impl.ArticleSetServiceImpl;
 import org.squirrelframework.foundation.fsm.annotation.StateMachineParameters;
 import org.squirrelframework.foundation.fsm.annotation.Transit;
 import org.squirrelframework.foundation.fsm.annotation.Transitions;
@@ -23,27 +23,27 @@ import org.squirrelframework.foundation.fsm.impl.AbstractUntypedStateMachine;
 })
 @StateMachineParameters(stateType = String.class, eventType = ArticleEventEnum.class,
         contextType = String.class)
-public class RuleSetStateMachine extends AbstractUntypedStateMachine {
+public class ArticleStateMachine extends AbstractUntypedStateMachine {
 
-    RuleSetService ruleSetService = new RuleSetServiceImpl();
+    ArticleSetService articleSetService = new ArticleSetServiceImpl();
 
     public int evaluate(String from, String to, ArticleEventEnum articleEventEnum, String re) {
         System.out.println("evaluating the rule set");
         return 0;
     }
 
-    public int reject(StateMachineRequestContext<String> stringStateMachineRequestContext) {
+    public int reject(FsmContext<String> stringFsmContext) {
         System.out.println("rejected the rule set");
         return 0;
     }
 
-    public int accept(StateMachineRequestContext<String> stringStateMachineRequestContext) {
+    public int accept(FsmContext<String> stringFsmContext) {
         System.out.println("passed the rule set");
         return 0;
     }
 
 //    public boolean updateStatus(String from, String to, ArticleEventEnum ruleSetEventEnum,
-//                                StateMachineRequestContext<ArticleStatusUpdatingBO> statusInBOStateMachineRequestContext) {
+//                                FsmContext<ArticleStatusUpdatingBO> statusInBOStateMachineRequestContext) {
 //
 //        System.out.println("当前状态为 : " + RuleSetStatusEnum.getNameByCode(from));
 //        System.out.println("要更新到状态为 : " + RuleSetStatusEnum.getNameByCode(to));
@@ -52,7 +52,7 @@ public class RuleSetStateMachine extends AbstractUntypedStateMachine {
 //
 //        ArticleStatusUpdatingBO ruleSetUpdateStatusInBO = statusInBOStateMachineRequestContext.getData();
 //
-//        ruleSetService.updateStatus(ruleSetUpdateStatusInBO.getId(), ruleSetUpdateStatusInBO.getStatus());
+//        articleSetService.updateStatus(ruleSetUpdateStatusInBO.getId(), ruleSetUpdateStatusInBO.getStatus());
 //
 //        return false;
 //    }
