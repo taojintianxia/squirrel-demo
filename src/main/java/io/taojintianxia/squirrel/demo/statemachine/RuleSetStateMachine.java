@@ -1,7 +1,7 @@
 package main.java.io.taojintianxia.squirrel.demo.statemachine;
 
 import main.java.io.taojintianxia.squirrel.demo.StateMachineRequestContext;
-import main.java.io.taojintianxia.squirrel.demo.event.ArticleEventEnum;
+import main.java.io.taojintianxia.squirrel.demo.enums.event.ArticleEventEnum;
 import main.java.io.taojintianxia.squirrel.demo.service.RuleSetService;
 import main.java.io.taojintianxia.squirrel.demo.service.impl.RuleSetServiceImpl;
 import org.squirrelframework.foundation.fsm.annotation.StateMachineParameters;

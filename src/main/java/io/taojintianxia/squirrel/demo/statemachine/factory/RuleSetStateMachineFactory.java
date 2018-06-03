@@ -1,6 +1,6 @@
 package main.java.io.taojintianxia.squirrel.demo.statemachine.factory;
 
-import main.java.io.taojintianxia.squirrel.demo.event.ArticleEventEnum;
+import main.java.io.taojintianxia.squirrel.demo.enums.event.ArticleEventEnum;
 import main.java.io.taojintianxia.squirrel.demo.statemachine.RuleSetStateMachine;
 import main.java.io.taojintianxia.squirrel.demo.status.RuleSetStatusEnum;
 import org.squirrelframework.foundation.fsm.StateMachineBuilderFactory;

@@ -1,4 +1,4 @@
-package main.java.io.taojintianxia.squirrel.demo.event;
+package main.java.io.taojintianxia.squirrel.demo.enums.event;
 
 import lombok.Getter;
 

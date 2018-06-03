@@ -1,6 +1,6 @@
 package main.java.io.taojintianxia.squirrel.demo;
 
-import main.java.io.taojintianxia.squirrel.demo.event.ArticleEventEnum;
+import main.java.io.taojintianxia.squirrel.demo.enums.event.ArticleEventEnum;
 import main.java.io.taojintianxia.squirrel.demo.statemachine.factory.RuleSetStateMachineFactory;
 import main.java.io.taojintianxia.squirrel.demo.status.RuleSetStatusEnum;
 import org.squirrelframework.foundation.fsm.StateMachine;
@@ -16,15 +16,6 @@ public class Application {
                 (RuleSetStatusEnum.NEW.name());
 
         Object object = ruleSetMachine.test(ArticleEventEnum.EVALUATE, "ID");
-        System.out.println(object);
-
-        System.out.println(ruleSetMachine.canAccept(ArticleEventEnum.DEPLOYED));
-        System.out.println(ruleSetMachine.canAccept(ArticleEventEnum.EVALUATE));
-        System.out.println(ruleSetMachine.canAccept(ArticleEventEnum.REJECT_EVALUATE));
-        ruleSetMachine.fire(ArticleEventEnum.EVALUATE,"");
-        System.out.println(ruleSetMachine.canAccept(ArticleEventEnum.DEPLOYED));
-        System.out.println(ruleSetMachine.canAccept(ArticleEventEnum.EVALUATE));
-        System.out.println(ruleSetMachine.canAccept(ArticleEventEnum.REJECT_EVALUATE));
 
     }
 
