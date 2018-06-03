@@ -7,7 +7,7 @@ import lombok.Data;
  * @date 2018/5/31 14:08
  */
 @Data
-public class RuleStatusUpdatingBO {
+public class ArticleStatusUpdatingBO {
 
     private String status;
 

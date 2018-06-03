@@ -1,6 +1,6 @@
 package main.java.io.taojintianxia.squirrel.demo;
 
-import main.java.io.taojintianxia.squirrel.demo.event.RuleSetEventEnum;
+import main.java.io.taojintianxia.squirrel.demo.event.ArticleEventEnum;
 import main.java.io.taojintianxia.squirrel.demo.statemachine.factory.RuleSetStateMachineFactory;
 import main.java.io.taojintianxia.squirrel.demo.status.RuleSetStatusEnum;
 import org.squirrelframework.foundation.fsm.StateMachine;
@@ -15,16 +15,16 @@ public class Application {
         StateMachine ruleSetMachine = RuleSetStateMachineFactory.getRuleSetStateMachineByStatus
                 (RuleSetStatusEnum.NEW.name());
 
-        Object object = ruleSetMachine.test(RuleSetEventEnum.EVALUATE, "ID");
+        Object object = ruleSetMachine.test(ArticleEventEnum.EVALUATE, "ID");
         System.out.println(object);
 
-        System.out.println(ruleSetMachine.canAccept(RuleSetEventEnum.DEPLOYED));
-        System.out.println(ruleSetMachine.canAccept(RuleSetEventEnum.EVALUATE));
-        System.out.println(ruleSetMachine.canAccept(RuleSetEventEnum.REJECT_EVALUATE));
-        ruleSetMachine.fire(RuleSetEventEnum.EVALUATE,"");
-        System.out.println(ruleSetMachine.canAccept(RuleSetEventEnum.DEPLOYED));
-        System.out.println(ruleSetMachine.canAccept(RuleSetEventEnum.EVALUATE));
-        System.out.println(ruleSetMachine.canAccept(RuleSetEventEnum.REJECT_EVALUATE));
+        System.out.println(ruleSetMachine.canAccept(ArticleEventEnum.DEPLOYED));
+        System.out.println(ruleSetMachine.canAccept(ArticleEventEnum.EVALUATE));
+        System.out.println(ruleSetMachine.canAccept(ArticleEventEnum.REJECT_EVALUATE));
+        ruleSetMachine.fire(ArticleEventEnum.EVALUATE,"");
+        System.out.println(ruleSetMachine.canAccept(ArticleEventEnum.DEPLOYED));
+        System.out.println(ruleSetMachine.canAccept(ArticleEventEnum.EVALUATE));
+        System.out.println(ruleSetMachine.canAccept(ArticleEventEnum.REJECT_EVALUATE));
 
     }
 
