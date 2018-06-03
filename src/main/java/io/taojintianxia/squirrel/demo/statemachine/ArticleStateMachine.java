@@ -2,8 +2,8 @@ package io.taojintianxia.squirrel.demo.statemachine;
 
 import io.taojintianxia.squirrel.demo.context.FsmContext;
 import io.taojintianxia.squirrel.demo.enums.event.ArticleEventEnum;
-import io.taojintianxia.squirrel.demo.service.ArticleSetService;
-import io.taojintianxia.squirrel.demo.service.impl.ArticleSetServiceImpl;
+import io.taojintianxia.squirrel.demo.service.ArticleService;
+import io.taojintianxia.squirrel.demo.service.impl.ArticleServiceImpl;
 import org.squirrelframework.foundation.fsm.annotation.StateMachineParameters;
 import org.squirrelframework.foundation.fsm.annotation.Transit;
 import org.squirrelframework.foundation.fsm.annotation.Transitions;
@@ -25,7 +25,7 @@ import org.squirrelframework.foundation.fsm.impl.AbstractUntypedStateMachine;
         contextType = String.class)
 public class ArticleStateMachine extends AbstractUntypedStateMachine {
 
-    ArticleSetService articleSetService = new ArticleSetServiceImpl();
+    ArticleService articleService = new ArticleServiceImpl();
 
     public int evaluate(String from, String to, ArticleEventEnum articleEventEnum, String re) {
         System.out.println("evaluating the rule set");
@@ -52,7 +52,7 @@ public class ArticleStateMachine extends AbstractUntypedStateMachine {
 //
 //        ArticleStatusUpdatingBO ruleSetUpdateStatusInBO = statusInBOStateMachineRequestContext.getData();
 //
-//        articleSetService.updateStatus(ruleSetUpdateStatusInBO.getId(), ruleSetUpdateStatusInBO.getStatus());
+//        articleService.updateStatus(ruleSetUpdateStatusInBO.getId(), ruleSetUpdateStatusInBO.getStatus());
 //
 //        return false;
 //    }

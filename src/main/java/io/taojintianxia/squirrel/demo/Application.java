@@ -1,22 +1,17 @@
 package io.taojintianxia.squirrel.demo;
 
-import io.taojintianxia.squirrel.demo.enums.event.ArticleEventEnum;
-import io.taojintianxia.squirrel.demo.enums.status.RuleSetStatusEnum;
-import io.taojintianxia.squirrel.demo.statemachine.factory.ArticleStateMachineFactory;
-import org.squirrelframework.foundation.fsm.StateMachine;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author Nianjun Sun
  * @date 2018/5/31 14:13
  */
+@SpringBootApplication
 public class Application {
 
-    public static void main(String... args) {
-        StateMachine ruleSetMachine = ArticleStateMachineFactory.getRuleSetStateMachineByStatus
-                (RuleSetStatusEnum.NEW.name());
-
-        Object object = ruleSetMachine.test(ArticleEventEnum.EVALUATE, "ID");
-
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
     }
 
 }
