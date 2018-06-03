@@ -21,9 +21,9 @@ public class RuleSetStateMachineFactory {
         return builder.newStateMachine(RuleSetStatusEnum.NEW.getCode());
     }
 
-    public static UntypedStateMachine getRuleSetStateMachineByStatus(String code) {
+    public static UntypedStateMachine getRuleSetStateMachineByStatus(String name) {
         UntypedStateMachineBuilder builder = StateMachineBuilderFactory.create(RuleSetStateMachine.class);
-        return builder.newStateMachine(code);
+        return builder.newStateMachine(name);
     }
 
 }
