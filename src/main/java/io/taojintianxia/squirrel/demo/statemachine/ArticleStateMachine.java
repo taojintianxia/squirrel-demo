@@ -45,8 +45,8 @@ public class ArticleStateMachine extends AbstractUntypedStateMachine {
 //    public boolean updateStatus(String from, String to, ArticleEventEnum ruleSetEventEnum,
 //                                FsmContext<ArticleStatusUpdatingBO> statusInBOStateMachineRequestContext) {
 //
-//        System.out.println("当前状态为 : " + RuleSetStatusEnum.getNameByCode(from));
-//        System.out.println("要更新到状态为 : " + RuleSetStatusEnum.getNameByCode(to));
+//        System.out.println("当前状态为 : " + RuleSetStatusEnum.getNameByStatus(from));
+//        System.out.println("要更新到状态为 : " + RuleSetStatusEnum.getNameByStatus(to));
 //        System.out.println("事件为 : " + ruleSetEventEnum.name());
 //        System.out.println("Context为 : " + statusInBOStateMachineRequestContext.getData());
 //

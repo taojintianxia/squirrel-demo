@@ -9,6 +9,7 @@ import lombok.Getter;
  */
 @Getter
 public enum RuleSetStatusEnum {
+
     NEW("新建", "1"),
     PENDING_EVALUATION("待评估", "2"),
     EVALUATION_SUCCESS("评估通过", "3"),
@@ -23,14 +24,14 @@ public enum RuleSetStatusEnum {
         this.status = status;
     }
 
-    public static String getNameByCode(String code) {
-        if (Strings.isNullOrEmpty(code)) {
+    public static String getNameByStatus(String status) {
+        if (Strings.isNullOrEmpty(status)) {
             return null;
         }
 
         RuleSetStatusEnum[] ruleSetStatusEnums = RuleSetStatusEnum.values();
         for (RuleSetStatusEnum ruleSetStatusEnum : ruleSetStatusEnums) {
-            if (ruleSetStatusEnum.getStatus().equals(code)) {
+            if (ruleSetStatusEnum.getStatus().equals(status)) {
                 return ruleSetStatusEnum.getName();
             }
         }
@@ -38,4 +39,18 @@ public enum RuleSetStatusEnum {
         return null;
     }
 
+    public static RuleSetStatusEnum getByStatus(String status) {
+        if (Strings.isNullOrEmpty(status)) {
+            return null;
+        }
+
+        RuleSetStatusEnum[] ruleSetStatusEnums = RuleSetStatusEnum.values();
+        for (RuleSetStatusEnum ruleSetStatusEnum : ruleSetStatusEnums) {
+            if (status.equals(ruleSetStatusEnum.getStatus())) {
+                return ruleSetStatusEnum;
+            }
+        }
+
+        return null;
+    }
 }

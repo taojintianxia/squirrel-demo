@@ -19,8 +19,8 @@ public class ArticleSetServiceImpl implements ArticleSetService {
     @Override
     public boolean updateStatus(String id, String status) {
         System.out.println("当前Id是 : " + id);
-        System.out.println("开始更新状态到 " + RuleSetStatusEnum.getNameByCode(status));
-        System.out.println("状态已经变更为 " + RuleSetStatusEnum.getNameByCode(status));
+        System.out.println("开始更新状态到 " + RuleSetStatusEnum.getNameByStatus(status));
+        System.out.println("状态已经变更为 " + RuleSetStatusEnum.getNameByStatus(status));
         return true;
     }
 }
